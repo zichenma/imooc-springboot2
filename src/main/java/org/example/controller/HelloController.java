@@ -9,11 +9,11 @@ public class HelloController {
 
     // @RequestMapping("hello")
     // @ResponseBody
-    // @GetMapping("hello")
-    @PostMapping("hello")
+    @GetMapping("hello")
+   //  @PostMapping("hello")
 //    @DeleteMapping
 //    @PutMapping
     public String hello() {
-        return "Hello World ~~";
+        return "Hello World~~";
     }
 }
