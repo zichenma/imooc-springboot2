@@ -1,0 +1,6 @@
+# 1。 一定要有缩进
+# 2. 区分大小写
+# 3. 值和冒号后需要有一个空格
+# 所有配置： https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html
+server:
+  port: 8090
