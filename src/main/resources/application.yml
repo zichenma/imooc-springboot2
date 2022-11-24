@@ -4,3 +4,13 @@
 # 所有配置： https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html
 server:
   port: 8090
+
+#bootstrap.yaml:
+#  加载优先级： bootstarp > application
+#  常用性： application > bootstrap
+#使用场景：
+#application.yml 主要用于 springboot 项目配置
+#bootstrap.yml：
+#  SpringCloud
+#  加密解密
+#  固定参数
