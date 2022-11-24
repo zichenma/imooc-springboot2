@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+<!-- 引用父工程 SpringBoot (启动器 starter)， 他里面包含了很多 Springboot 的子工程 -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -19,7 +20,9 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+<!--            https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#using.build-systems.starters-->
             <artifactId>spring-boot-starter-web</artifactId>
+<!--            <version>2.4.3</version> 如果需要更改版本，可以在此设置，该版本将会覆盖 2.7.5-->
         </dependency>
 
         <dependency>
