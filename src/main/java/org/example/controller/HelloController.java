@@ -3,6 +3,7 @@ package org.example.controller;
 import org.example.pojo.MyConfig;
 import org.example.pojo.Student;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -36,6 +37,21 @@ public class HelloController {
     @GetMapping("getMyConfig")
     public Object getMyConfig(){
         return myConfig;
+    };
+
+    @Value("${self.custom.config.sdkSecrect}")
+    private String sdkSecrect;
+    @Value("${self.custom.config.host}")
+    private String host;
+
+    @Value("${self.custom.config.port}")
+    private String port;
+    @Value("${app.name.xxx.yyy.zzz}")
+    private String xyz;
+
+    @GetMapping("getYmlCustomConfig")
+    public Object getYmlCustomConfig(){
+        return sdkSecrect + ";\t" + host + ":" + port + ";\t" + xyz;
     };
 
 }

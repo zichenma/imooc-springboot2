@@ -14,3 +14,16 @@ server:
 #  SpringCloud
 #  加密解密
 #  固定参数
+
+app:
+  name:
+    xxx:
+      yyy:
+        zzz: imooc
+
+self:
+  custom:
+    config:
+      sdkSecrect: abc123
+      host: https://www.imooc.com
+      port: ${server.port}
