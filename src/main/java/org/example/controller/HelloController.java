@@ -1,7 +1,9 @@
 package org.example.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.pojo.MyConfig;
 import org.example.pojo.Student;
+import org.example.pojo.StudentLombok;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 //@Controller
 @RestController // 相当于是 @Controller +  @ResponseBody
+@Slf4j
 public class HelloController {
 
     // @RequestMapping("hello")
@@ -52,6 +55,20 @@ public class HelloController {
     @GetMapping("getYmlCustomConfig")
     public Object getYmlCustomConfig(){
         return sdkSecrect + ";\t" + host + ":" + port + ";\t" + xyz;
+    };
+
+    @GetMapping("getStudentLombok")
+    public Object getStudentLombok(){
+        StudentLombok stu = new StudentLombok();
+        stu.setName("imooc");
+        stu.setAge(18);
+        // System.out.println(stu.toString());
+        StudentLombok stu2 = new StudentLombok("jack", 20);
+        log.info(stu.toString());
+        log.debug(stu.toString());
+        log.warn(stu.toString());
+        log.error(stu.toString());
+        return stu2.toString();
     };
 
 }
