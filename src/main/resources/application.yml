@@ -29,6 +29,9 @@ self:
       port: ${server.port}
 
 spring:
+  # 改变默认更目录 static
+#  mvc:
+#    static-path-pattern: /abc/**
   banner:
     image:
       location: classpath:banner/dog.jpeg
