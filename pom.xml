@@ -24,6 +24,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
 <!--            <version>2.4.3</version> 如果需要更改版本，可以在此设置，该版本将会覆盖 2.7.5-->
         </dependency>
+        <!-- SpringBoot 配置资源处理器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
 <!--        springboot 提供的开发者工具 点击build可以热启动，但是不推荐使用，因为项目大了 热启动会花更多时间-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
