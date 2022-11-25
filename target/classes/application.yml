@@ -29,7 +29,12 @@ self:
       port: ${server.port}
 
 spring:
+  # 改变默认更目录 static
+#  mvc:
+#    static-path-pattern: /abc/**
   banner:
     image:
       location: classpath:banner/dog.jpeg
-      pixelmode: text #图片转文本
+      pixelmode: block #图片转 block
+    # 也可以自定义txt (图片转 txt: https://degraeve.com/img2txt.php)
+    # location: classpath:banner/banner.txt
