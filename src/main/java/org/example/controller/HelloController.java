@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import org.example.pojo.MyConfig;
 import org.example.pojo.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,4 +29,13 @@ public class HelloController {
     public Object getStudent(){
         return student;
     };
+
+    @Autowired
+    private MyConfig myConfig;
+
+    @GetMapping("getMyConfig")
+    public Object getMyConfig(){
+        return myConfig;
+    };
+
 }
