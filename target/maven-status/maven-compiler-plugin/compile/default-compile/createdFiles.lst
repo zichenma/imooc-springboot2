@@ -1,2 +1,6 @@
+META-INF/spring-configuration-metadata.json
+org/example/pojo/MyConfig.class
 org/example/controller/HelloController.class
 org/example/Application.class
+org/example/SpringBootConfig.class
+org/example/pojo/Student.class

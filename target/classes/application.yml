@@ -27,3 +27,9 @@ self:
       sdkSecrect: abc123
       host: https://www.imooc.com
       port: ${server.port}
+
+spring:
+  banner:
+    image:
+      location: classpath:banner/dog.jpeg
+      pixelmode: text #图片转文本
