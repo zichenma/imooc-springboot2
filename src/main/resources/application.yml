@@ -27,3 +27,11 @@ self:
       sdkSecrect: abc123
       host: https://www.imooc.com
       port: ${server.port}
+
+spring:
+  banner:
+    image:
+      location: classpath:banner/dog.jpeg
+      pixelmode: block #图片转 block
+    # 也可以自定义txt (图片转 txt: https://degraeve.com/img2txt.php)
+    # location: classpath:banner/banner.txt
