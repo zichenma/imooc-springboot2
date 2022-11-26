@@ -4,3 +4,4 @@ org/example/pojo/MyConfig.class
 org/example/controller/HelloController.class
 org/example/Application.class
 org/example/pojo/Student.class
+org/example/GraceExceptionHandler.class

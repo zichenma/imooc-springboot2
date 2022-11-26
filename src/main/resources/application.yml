@@ -31,8 +31,7 @@ self:
 spring:
   servlet:
     multipart:
-      max-file-size: 500KB # 文件上传最大限制，设置最大值，不能超过，否则报错
-      # max-file-size: 5KB # 测试 error.html 时候用
+      max-file-size: 300KB # 文件上传最大限制，设置最大值，不能超过，否则报错
       max-request-size: 2MB # 文件最大请求限制，用于批量
   # 改变默认更目录 static
 #  mvc:
