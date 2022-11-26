@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.example.pojo.MyConfig;
 import org.example.pojo.Student;
 import org.example.pojo.StudentLombok;
+import org.example.utils.JSONResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -58,7 +59,7 @@ public class HelloController {
     };
 
     @GetMapping("getStudentLombok")
-    public Object getStudentLombok(){
+    public JSONResult getStudentLombok(){
         StudentLombok stu = new StudentLombok();
         stu.setName("imooc");
         stu.setAge(18);
@@ -68,7 +69,8 @@ public class HelloController {
         log.debug(stu.toString());
         log.warn(stu.toString());
         log.error(stu.toString());
-        return stu2.toString();
+        return JSONResult.ok(stu2); // {"status":200,"msg":"OK","data":{"name":"jack","age":20}}
+        // return JSONResult.errorMsg("Something wrong"); // {status: 500, msg: "Something wrong", data: null}
     };
 
 }
