@@ -39,6 +39,17 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <!-- 引入 SpringBoot 默认的数据源 （HicariCP) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <!-- 引入 MySql/MariaDB 数据库驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+<!--            <version>5.1.49</version>-->
+        </dependency>
 <!--        springboot 提供的开发者工具 点击build可以热启动，但是不推荐使用，因为项目大了 热启动会花更多时间-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
