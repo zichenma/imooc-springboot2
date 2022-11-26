@@ -5,6 +5,7 @@ import org.example.pojo.MyConfig;
 import org.example.pojo.Student;
 import org.example.pojo.StudentLombok;
 import org.example.utils.JSONResult;
+import org.example.utils.MyAsyncTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -41,8 +42,17 @@ public class HelloController {
     @Autowired
     private MyConfig myConfig;
 
+    @Autowired
+    private MyAsyncTask myAsyncTask;
     @GetMapping("getMyConfig")
     public Object getMyConfig(){
+        myAsyncTask.publishMsg();
+        log.info("This is skip async task execution");
+        /**
+         * : Completed initialization in 2 ms
+         * 2022-11-26 13:31:34.550  INFO 62992 --- [nio-8090-exec-1] org.example.controller.HelloController   : This is skip async task execution
+         * 2022-11-26 13:31:39.559  WARN 62992 --- [         task-1] org.example.utils.MyAsyncTask            : Async task finished
+         */
         return myConfig;
     };
 
