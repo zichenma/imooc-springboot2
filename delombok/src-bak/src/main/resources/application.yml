@@ -1,0 +1,44 @@
+# 1。 一定要有缩进
+# 2. 区分大小写
+# 3. 值和冒号后需要有一个空格
+# 所有配置： https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html
+server:
+  port: 8090
+
+#bootstrap.yaml:
+#  加载优先级： bootstarp > application
+#  常用性： application > bootstrap
+#使用场景：
+#application.yml 主要用于 springboot 项目配置
+#bootstrap.yml：
+#  SpringCloud
+#  加密解密
+#  固定参数
+
+app:
+  name:
+    xxx:
+      yyy:
+        zzz: imooc
+
+self:
+  custom:
+    config:
+      sdkSecrect: abc123
+      host: https://www.imooc.com
+      port: ${server.port}
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 300KB # 文件上传最大限制，设置最大值，不能超过，否则报错
+      max-request-size: 2MB # 文件最大请求限制，用于批量
+  # 改变默认更目录 static
+#  mvc:
+#    static-path-pattern: /abc/**
+  banner:
+    image:
+      location: classpath:banner/dog.jpeg
+      pixelmode: block #图片转 block
+    # 也可以自定义txt (图片转 txt: https://degraeve.com/img2txt.php)
+    # location: classpath:banner/banner.txt
