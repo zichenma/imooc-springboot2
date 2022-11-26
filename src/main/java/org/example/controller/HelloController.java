@@ -9,6 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
 
 //@Controller
 @RestController // 相当于是 @Controller +  @ResponseBody
@@ -72,5 +75,12 @@ public class HelloController {
         return JSONResult.ok(stu2); // {"status":200,"msg":"OK","data":{"name":"jack","age":20}}
         // return JSONResult.errorMsg("Something wrong"); // {status: 500, msg: "Something wrong", data: null}
     };
+
+    // must update userName
+    @PostMapping("upload")
+    public String upload(MultipartFile file) throws Exception {
+        file.transferTo(new File("/Users/userName/Desktop/temp/" + file.getOriginalFilename()));
+        return "Upload Successed!";
+    }
 
 }
