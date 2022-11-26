@@ -1,4 +1,4 @@
-package org.example;
+package org.example.exception;
 
 import org.apache.tomcat.util.http.fileupload.impl.FileSizeLimitExceededException;
 import org.example.utils.JSONResult;
@@ -20,5 +20,11 @@ public class GraceExceptionHandler {
     public JSONResult returnMaxFileSizeLimit(FileSizeLimitExceededException e){
         return JSONResult.errorMsg("File size cannot larger than 300 KB");
         // {"status":500,"msg":"File size cannot larger than 300 KB","data":null}
+    }
+
+    @ExceptionHandler(MyCustomException.class)
+    @ResponseBody
+    public JSONResult returnMyCustomException(MyCustomException e){
+        return JSONResult.errorMsg(e.getMessage());
     }
 }

@@ -1,6 +1,7 @@
 package org.example.controller.interceptor;
 
 import lombok.extern.slf4j.Slf4j;
+import org.example.exception.GraceException;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 import org.thymeleaf.util.StringUtils;
@@ -27,11 +28,13 @@ public class UserInfoInterceptor implements HandlerInterceptor {
         String userToken = request.getHeader("userToken");
         if (StringUtils.isEmpty(userId) || StringUtils.isEmpty(userToken)) {
             log.error("user authorization failed. Missing auth info");
+            GraceException.display("user authorization failed. Missing auth info");
             return false;
         }
         // 假设正式的用户 id 是 1001， 用户 token 是 abcxyz
         if(!userId.equalsIgnoreCase("1001") || !userToken.equalsIgnoreCase("abcxyz")) {
             log.error("user authorization failed. You don't have access");
+            GraceException.display("user authorization failed. You don't have access");
             return false;
         }
         /**
