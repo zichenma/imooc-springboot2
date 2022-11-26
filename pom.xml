@@ -50,6 +50,24 @@
             <artifactId>mysql-connector-java</artifactId>
 <!--            <version>5.1.49</version>-->
         </dependency>
+        <!-- 整合MyBatis -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+<!--        通用mapper工具 (数据库表映射Bean/Entity自动创建Java类）-->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>2.1.5</version>
+        </dependency>
+        <!-- PagerHelper 分页的助手类 -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.4.5</version>
+        </dependency>
 <!--        springboot 提供的开发者工具 点击build可以热启动，但是不推荐使用，因为项目大了 热启动会花更多时间-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
