@@ -26,9 +26,35 @@ public class TeacherController {
     @Autowired
     private TeacherService teacherService;
 
+    /**
+     * POST: http://localhost:8090/teacher/create2
+     * RequestBody: {
+     *     "name": "imooc2",
+     *     "sex": 0,
+     *     "age": 20,
+     *     "grade": 0,
+     *     "classroom": 19,
+     *     "skill": ["java", "html", "ios", "jsp", "css", "python"],
+     *     "englishName": "ab",
+     *     "emal": "sdafsfsaf"
+     * }
+     *
+     * Response: {
+     *     "status": 501,
+     *     "msg": "error",
+     *     "data": {
+     *         "englishName": "Teacher's english name should between 1~18",
+     *         "grade": "Minimum grade for teacher is 1",
+     *         "skill": "At least 2 skills, at most 5 skills",
+     *         "classroom": "Teacher's classroom between 1~18"
+     *     }
+     * }
+     * @param teacherBO
+     * @param result
+     * @return
+     */
     @PostMapping("create2")
     public JSONResult createTeacher2(@Valid @RequestBody TeacherBO teacherBO, BindingResult result) {
-
         // 判断 BindingResult 是否有错误， 错误信息会包含在里面，如果有则直接 return
         if (result.hasErrors()) {
             Map<String, String> map = getErrors(result);
@@ -43,14 +69,16 @@ public class TeacherController {
     }
 
     public Map<String, String> getErrors(BindingResult result) {
-        Map<String, String> map = new HashMap<>();
-        List<FieldError> errorList = (List<FieldError>) result.getFieldError();
-        for (FieldError error: errorList) {
+        Map<String, String> errorMap = new HashMap<>();
+        List<FieldError> errorList = result.getFieldErrors();
+        for (FieldError error : errorList) {
+            // 获得检验发送错误的某个属性名称
             String field = error.getField();
+            // 获得该属性发生错误的信息
             String msg = error.getDefaultMessage();
-            map.put(field, msg);
+            errorMap.put(field, msg);
         }
-        return map;
+        return errorMap;
     }
     @PostMapping("create")
     public JSONResult createTeacher() {
