@@ -113,4 +113,15 @@ public class TeacherController {
         // return JSONResult.ok(list);
         return JSONResult.ok(teacher);
     }
+
+    @PutMapping("update")
+    public JSONResult updateTeacher() {
+        Teacher teacher = new Teacher();
+        // setId 这里会根据 id 获取到存在的对象，然后再 update
+        teacher.setId("11111");
+        teacher.setName("Already exist");
+        teacher.setSex(2);
+        teacherService.updateTeacher(teacher);
+        return JSONResult.ok();
+    }
 }
