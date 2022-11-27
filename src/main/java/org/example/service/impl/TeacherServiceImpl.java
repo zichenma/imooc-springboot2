@@ -50,4 +50,10 @@ public class TeacherServiceImpl implements TeacherService {
         List<Teacher> teacherList = teacherMapper.select(teacher);
         return teacherList;
     }
+
+    // 也可以返回一个 int， MyBatis 会返回一个 int (0, 1) 标识更改成功与否
+    @Override
+    public void updateTeacher(Teacher teacher) {
+        teacherMapper.updateByPrimaryKey(teacher);
+    }
 }
