@@ -26,4 +26,10 @@ public interface TeacherService {
      * @return
      */
     public void updateTeacher(Teacher teacher);
+
+    /**
+     *  根据条件删除 teacher
+     * @param teacher
+     */
+    public void deleteTeacher(Teacher teacher);
 }

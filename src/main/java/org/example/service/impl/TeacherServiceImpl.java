@@ -51,9 +51,23 @@ public class TeacherServiceImpl implements TeacherService {
         return teacherList;
     }
 
-    // 也可以返回一个 int， MyBatis 会返回一个 int (0, 1) 标识更改成功与否
+    // 也可以返回一个 int， MyBatis 会返回一个 int (1: 成功，0：没有变化) 标识更改成功与否
     @Override
     public void updateTeacher(Teacher teacher) {
         teacherMapper.updateByPrimaryKey(teacher);
+    }
+
+    @Override
+    public void deleteTeacher(Teacher teacher) {
+        // 删除对象/数据有三种方式
+        // 1. 根据主键删除
+       //  teacherMapper.deleteByPrimaryKey(teacher.getId());
+        // 2. 根据对象中的匹配值条件做删除, 如果是空的属性则不做匹配，条件满足则删除所有entry
+       // teacherMapper.delete(teacher);
+        // 3. 根据构建的 example  进行条件删除
+        Example example = new Example(Teacher.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("name", teacher.getName());
+        teacherMapper.deleteByExample(example);
     }
 }
