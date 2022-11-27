@@ -10,10 +10,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.*;
@@ -91,5 +88,29 @@ public class TeacherController {
 
         teacherService.saveTeacher(teacher);
         return JSONResult.ok();
+    }
+
+    /**
+     * Request: http://localhost:8090/teacher/get?teacherId=3dccd999-4795-4ea4-bb0f-2b0355044e80
+     * Response:
+     * {
+         status: 200,
+         msg: "OK",
+         data: {
+         id: "3dccd999-4795-4ea4-bb0f-2b0355044e80",
+         name: "imooc2",
+         age: 20,
+         sex: 0
+     }
+     * @param teacherId
+     * @return
+     */
+    @GetMapping("/get")
+    public JSONResult getTeacher(String teacherId) {
+        Teacher teacher = teacherService.queryById(teacherId);
+        // Query by Condition:
+        // List<Teacher> list = teacherService.queryByCondition("imooc1", 0);
+        // return JSONResult.ok(list);
+        return JSONResult.ok(teacher);
     }
 }
