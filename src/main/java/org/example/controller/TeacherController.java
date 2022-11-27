@@ -124,4 +124,15 @@ public class TeacherController {
         teacherService.updateTeacher(teacher);
         return JSONResult.ok();
     }
+
+    @DeleteMapping("delete")
+    public void deleteTeacher() {
+        Teacher teacher = new Teacher();
+        // 1. 根据主键删除
+        // teacher.setId("0c2e04a9-1f0d-4f73-8a07-e32bb55b2c16");
+        // 2. 根据条件删除 （全部删除）
+        teacher.setSex(2);
+        teacher.setName("abc");
+        teacherService.deleteTeacher(teacher);
+    }
 }
