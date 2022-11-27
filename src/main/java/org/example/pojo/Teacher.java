@@ -3,6 +3,7 @@ package org.example.pojo;
 import javax.persistence.*;
 
 @Table(name = "teacher")
+// @Data 这个也可以用 data, 但是不推荐，因为如果有对该类新的扩展，则当前类会被覆盖，不便于维护, 因此不建议使用 data 在与数据相连时
 public class Teacher {
     @Id
     private String id;
@@ -11,7 +12,7 @@ public class Teacher {
 
     private Integer age;
 
-    private String sex;
+    private Integer sex;
 
     /**
      * @return id
@@ -58,14 +59,14 @@ public class Teacher {
     /**
      * @return sex
      */
-    public String getSex() {
+    public Integer getSex() {
         return sex;
     }
 
     /**
      * @param sex
      */
-    public void setSex(String sex) {
+    public void setSex(Integer sex) {
         this.sex = sex;
     }
 }
