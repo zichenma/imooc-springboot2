@@ -32,4 +32,10 @@ public interface TeacherService {
      * @param teacher
      */
     public void deleteTeacher(Teacher teacher);
+
+    /**
+     *  用于演示事务
+     */
+    public void  testTrans();
+
 }

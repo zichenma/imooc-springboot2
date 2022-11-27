@@ -135,4 +135,10 @@ public class TeacherController {
         teacher.setName("abc");
         teacherService.deleteTeacher(teacher);
     }
+
+    @GetMapping("testTrans")
+    public JSONResult getTeacher() {
+        teacherService.testTrans();
+        return JSONResult.ok();
+    }
 }
