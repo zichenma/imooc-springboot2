@@ -62,6 +62,8 @@ spring:
 mybatis:
   type-aliases-package: com.imooc.pojo # 所有数据库表逆向后所一一映射的实体类 Entity/Bean/POJO
   mapper-locations: classpath:mappers/*.xml # 所有mapper映射的文件所在目录位置
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 开启 mybatis 的日志实现，可以在控制台打印输入 sql 语句，（不适用于 Prod 环境, 因为日志庞大）
 # 通用 mapper 配置
 mapper:
   mappers: org.example.my.mapper.MyMapper  # 所有 Mapper 都需要实现的接口
