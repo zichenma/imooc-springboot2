@@ -107,7 +107,8 @@ public class TeacherController {
      */
     @GetMapping("/get")
     public JSONResult getTeacher(String teacherId) {
-        Teacher teacher = teacherService.queryById(teacherId);
+        // Teacher teacher = teacherService.queryById(teacherId);
+        Teacher teacher = teacherService.queryByIdCustom(teacherId);
         // Query by Condition:
         // List<Teacher> list = teacherService.queryByCondition("imooc1", 0);
         // return JSONResult.ok(list);
