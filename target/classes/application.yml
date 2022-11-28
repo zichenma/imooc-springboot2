@@ -31,6 +31,7 @@ self:
 spring:
   datasource:  #数据源相关的配置节点
     type: com.zaxxer.hikari.HikariDataSource  #数据源类型
+    #type: com.alibaba.druid.pool.DruidDataSource # 引入自定义的 druid 数据源
     driver-class-name: com.mysql.cj.jdbc.Driver  #MySql 驱动  Old: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/imooc-springboot-learn?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
     username: root

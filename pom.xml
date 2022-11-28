@@ -34,6 +34,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+<!--        引入阿里的 druid 数据源-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.2.15</version>
+        </dependency>
         <!-- lombok plugin -->
         <dependency>
             <groupId>org.projectlombok</groupId>
