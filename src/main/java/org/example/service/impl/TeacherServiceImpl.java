@@ -1,6 +1,7 @@
 package org.example.service.impl;
 
 import org.example.mapper.TeacherMapper;
+import org.example.mapper.TeacherMapperCustom;
 import org.example.pojo.Teacher;
 import org.example.service.TeacherService;
 import org.springframework.beans.BeanUtils;
@@ -20,6 +21,9 @@ public class TeacherServiceImpl implements TeacherService {
     @Autowired
     private TeacherMapper teacherMapper;
 
+    @Autowired
+    private TeacherMapperCustom teacherMapperCustom;
+
     @Override
     public void saveTeacher(Teacher teacher) {
         teacherMapper.insert(teacher);
@@ -29,6 +33,15 @@ public class TeacherServiceImpl implements TeacherService {
     public Teacher queryById(String id) {
         Teacher teacher = teacherMapper.selectByPrimaryKey(id);
         return teacher;
+    }
+
+    @Override
+    public Teacher queryByIdCustom(String id) {
+        List<Teacher> teachers = teacherMapperCustom.getTeacherById(id);
+        if (teachers != null && !teachers.isEmpty()) {
+            return teachers.get(0);
+        }
+        return null;
     }
 
     // 根据一个条件去进行查询

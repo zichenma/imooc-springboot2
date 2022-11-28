@@ -38,4 +38,11 @@ public interface TeacherService {
      */
     public void  testTrans();
 
+    /**
+     *  用于演示 SQL 语句 Query
+     * @param id
+     * @return
+     */
+    public Teacher queryByIdCustom(String id);
+
 }
