@@ -58,6 +58,9 @@ spring:
       pixelmode: block #图片转 block
     # 也可以自定义txt (图片转 txt: https://degraeve.com/img2txt.php)
     # location: classpath:banner/banner.txt
+  thymeleaf:
+    prefix: classpath:/templates/html/ # 最后的斜杠一定要有
+    suffix: .html
 # MyBatis 相关的配置
 mybatis:
   type-aliases-package: com.imooc.pojo # 所有数据库表逆向后所一一映射的实体类 Entity/Bean/POJO
