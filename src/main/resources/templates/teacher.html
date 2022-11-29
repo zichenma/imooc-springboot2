@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hello Thymeleaf~~~</title>
+</head>
+<body>
+
+<!-- 输出文本 -->
+Hello <span>风间影月</span>
+<br/>
+Hello <span>Jack</span>
+
+<br/>
+
+<input value="Jack"></input>
+
+<br/>
+<br/>
+
+<!-- 判读字符串是否为空 -->
+<span>false</span>
+<br/>
+<!-- 判读字符串中是否包含指定的字符串 -->
+<span>true</span>
+<br/>
+<!-- 打印字符串的长度 -->
+<span>4</span>
+<br/>
+<!-- 判读字符串是否以指定的字符开头 -->
+<span>true</span>
+<br/>
+<!-- 判读字符串是否以指定的字符结尾 -->
+<span>false</span>
+<br/>
+<!-- 查找指定的字符串出现的下标位置，如果找不到，则为 -1 -->
+<span>2</span>
+<br/>
+
+<br/>
+<br/>
+
+默认日期：<span>Mon Nov 28 22:08:39 EST 2022</span>
+<br/>
+默认格式日期：<span>November 28, 2022 at 10:08:39 PM EST</span>
+<br/>
+指定格式日期：<span>2022-11-28 10:08:39</span>
+<br/>
+获得年月日：
+<span>2022</span>年
+<span>11</span>月
+<span>28</span>日
+<br/>
+<br/>
+
+
+
+<span>
+    未知
+</span>
+
+<br/>
+<br/>
+
+<span>
+    
+    
+    <span>
+        未知
+    </span>
+</span>
+
+<br/>
+<br/>
+
+<!--for (String str: mylist) {-->
+<!--sout(str)-->
+<!--}-->
+
+<span>
+    记录的值：<span>1001</span><br/>
+    count：<span>1</span><br/>
+    index：<span>0</span><br/>
+    size：<span>3</span><br/>
+    odd：<span>true</span><br/>
+    even：<span>false</span><br/>
+    first：<span>true</span><br/>
+    last：<span>false</span><br/>
+</span><span>
+    记录的值：<span>1002</span><br/>
+    count：<span>2</span><br/>
+    index：<span>1</span><br/>
+    size：<span>3</span><br/>
+    odd：<span>false</span><br/>
+    even：<span>true</span><br/>
+    first：<span>false</span><br/>
+    last：<span>false</span><br/>
+</span><span>
+    记录的值：<span>1003</span><br/>
+    count：<span>3</span><br/>
+    index：<span>2</span><br/>
+    size：<span>3</span><br/>
+    odd：<span>true</span><br/>
+    even：<span>false</span><br/>
+    first：<span>false</span><br/>
+    last：<span>true</span><br/>
+</span>
+
+<br/>
+
+<span>
+    <span>sex=boy</span>
+    <span>sex</span>
+    <span>boy</span>
+</span><span>
+    <span>name=风间影月</span>
+    <span>name</span>
+    <span>风间影月</span>
+</span><span>
+    <span>id=30033</span>
+    <span>id</span>
+    <span>30033</span>
+</span><span>
+    <span>age=18</span>
+    <span>age</span>
+    <span>18</span>
+</span>
+
+<br/>
+<br/>
+
+<!--英文名：<span th:text="${#request.getAttribute('enName')}"></span>-->
+<!--用户Token：<span th:text="${#session.getAttribute('userToken')}"></span>-->
+
+</body>
+</html>
