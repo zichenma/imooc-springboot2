@@ -2,8 +2,8 @@
 # 2. 区分大小写
 # 3. 值和冒号后需要有一个空格
 # 所有配置： https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html
-server:
-  port: 8090
+#server:  # 在 dev 和 test 中有
+  #port: 8090
 
 #bootstrap.yaml:
 #  加载优先级： bootstarp > application
@@ -29,6 +29,8 @@ self:
       port: ${server.port}
 
 spring:
+  profiles:
+    active: dev #test 这个时候会自动匹配 application-{env}
   datasource:  #数据源相关的配置节点
     type: com.zaxxer.hikari.HikariDataSource  #数据源类型
     #type: com.alibaba.druid.pool.DruidDataSource # 引入自定义的 druid 数据源
@@ -65,8 +67,8 @@ spring:
 mybatis:
   type-aliases-package: com.imooc.pojo # 所有数据库表逆向后所一一映射的实体类 Entity/Bean/POJO
   mapper-locations: classpath:mappers/*.xml # 所有mapper映射的文件所在目录位置
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 开启 mybatis 的日志实现，可以在控制台打印输入 sql 语句，（不适用于 Prod 环境, 因为日志庞大）
+  #configuration: # 在其他环境中有
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 开启 mybatis 的日志实现，可以在控制台打印输入 sql 语句，（不适用于 Prod 环境, 因为日志庞大）
 # 通用 mapper 配置
 mapper:
   mappers: org.example.my.mapper.MyMapper  # 所有 Mapper 都需要实现的接口
