@@ -79,6 +79,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 <!--        springboot 提供的开发者工具 点击build可以热启动，但是不推荐使用，因为项目大了 热启动会花更多时间-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
